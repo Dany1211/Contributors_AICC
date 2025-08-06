@@ -64,25 +64,12 @@ const Documentation: React.FC = () => {
 
           <div>
             <h4 className="font-semibold text-neutral-900 mb-3">
-              1. Fork and Clone the Repository
+               Fork and Clone the Repository
             </h4>
             <CodeBlock
               code={`# Fork the repository on GitHub, then clone it locally
 git clone https://github.com/Dany1211/Contributors_AICC.git
 cd contributors-gallery`}
-            />
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">
-              2. Create a New Branch
-            </h4>
-            <CodeBlock
-              code={`# Create and switch to a new branch
-git checkout -b add-my-profile
-
-# Or use the newer syntax
-git switch -c add-my-profile`}
             />
           </div>
         </div>
@@ -107,10 +94,8 @@ git switch -c add-my-profile`}
               <li>• Dimensions: 400x400px minimum</li>
               <li>• Format: JPG, PNG, or WebP</li>
               <li>• File size: Under 2MB</li>
-              <li>• Clear, professional headshot</li>
             </ul>
           </div>
-
           <div>
             <h4 className="font-semibold text-neutral-900 mb-3">
               File Structure
