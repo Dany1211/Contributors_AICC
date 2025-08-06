@@ -243,44 +243,13 @@ git commit -m "feat: add [Your Name] to contributors gallery
 git commit -m "Add [Your Name] to contributors"`}
             />
           </div>
-
-          <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">
-              3. Push to Your Fork
-            </h4>
-            <CodeBlock
-              code={`# Push your branch to your forked repository
-git push origin add-my-profile
-
-# If this is your first push, you might need:
-git push -u origin add-my-profile`}
-            />
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">
-              4. Create a Pull Request
-            </h4>
-            <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-4">
-              <ol className="text-sm text-neutral-700 space-y-2">
-                <li>1. Go to your forked repository on GitHub</li>
-                <li>2. Click "Compare & pull request" button</li>
-                <li>
-                  3. Add a descriptive title: "Add [Your Name] to contributors"
-                </li>
-                <li>4. Describe your changes in the PR description</li>
-                <li>5. Click "Create pull request"</li>
-              </ol>
-            </div>
-          </div>
-
           <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
             <h4 className="font-semibold text-purple-900 mb-2">
               What Happens Next?
             </h4>
             <p className="text-purple-800 text-sm">
-              Our maintainers will review your pull request. They might ask for
-              small changes or approve it directly. Once approved and merged,
+              Our maintainers will review your commit. They might ask for
+              small changes or approve it directly. Once approved,
               your profile will appear in the gallery!
             </p>
           </div>
