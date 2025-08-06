@@ -1,6 +1,14 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Copy, GitBranch, Upload, FileImage, Terminal, Folder, Check } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Copy,
+  GitBranch,
+  Upload,
+  FileImage,
+  Terminal,
+  Folder,
+  Check,
+} from "lucide-react";
 
 const Documentation: React.FC = () => {
   const [copiedText, setCopiedText] = React.useState<string | null>(null);
@@ -11,7 +19,10 @@ const Documentation: React.FC = () => {
     setTimeout(() => setCopiedText(null), 2000);
   };
 
-  const CodeBlock: React.FC<{ code: string; language?: string }> = ({ code, language = 'bash' }) => (
+  const CodeBlock: React.FC<{ code: string; language?: string }> = ({
+    code,
+    language = "bash",
+  }) => (
     <div className="relative group">
       <pre className="bg-neutral-900 text-neutral-100 rounded-xl p-4 overflow-x-auto text-sm leading-relaxed">
         <code className={`language-${language}`}>{code}</code>
@@ -31,15 +42,17 @@ const Documentation: React.FC = () => {
 
   const sections = [
     {
-      id: 'getting-started',
-      title: 'Getting Started',
+      id: "getting-started",
+      title: "Getting Started",
       icon: GitBranch,
       content: (
         <div className="space-y-6">
           <p className="text-neutral-600 leading-relaxed">
-            Welcome! Contributing to our gallery is simple and straightforward. Follow these steps to add your profile and become part of our community.
+            Welcome! Contributing to our gallery is simple and straightforward.
+            Follow these steps to add your profile and become part of our
+            community.
           </p>
-          
+
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
             <h4 className="font-semibold text-blue-900 mb-2">Prerequisites</h4>
             <ul className="text-blue-800 text-sm space-y-1">
@@ -50,35 +63,46 @@ const Documentation: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">1. Fork and Clone the Repository</h4>
-            <CodeBlock code={`# Fork the repository on GitHub, then clone it locally
-git clone https://github.com/your-username/contributors-gallery.git
-cd contributors-gallery`} />
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              1. Fork and Clone the Repository
+            </h4>
+            <CodeBlock
+              code={`# Fork the repository on GitHub, then clone it locally
+git clone https://github.com/Dany1211/Contributors_AICC.git
+cd contributors-gallery`}
+            />
           </div>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">2. Create a New Branch</h4>
-            <CodeBlock code={`# Create and switch to a new branch
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              2. Create a New Branch
+            </h4>
+            <CodeBlock
+              code={`# Create and switch to a new branch
 git checkout -b add-my-profile
 
 # Or use the newer syntax
-git switch -c add-my-profile`} />
+git switch -c add-my-profile`}
+            />
           </div>
         </div>
-      )
+      ),
     },
     {
-      id: 'adding-images',
-      title: 'Adding Your Profile Image',
+      id: "adding-images",
+      title: "Adding Your Profile Image",
       icon: Upload,
       content: (
         <div className="space-y-6">
           <p className="text-neutral-600 leading-relaxed">
-            Your profile image should be professional and represent you well. Here's how to add it to the project.
+            Your profile image should be professional and represent you well.
+            Here's how to add it to the project.
           </p>
 
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
-            <h4 className="font-semibold text-amber-900 mb-2">Image Requirements</h4>
+            <h4 className="font-semibold text-amber-900 mb-2">
+              Image Requirements
+            </h4>
             <ul className="text-amber-800 text-sm space-y-1">
               <li>• Dimensions: 400x400px minimum</li>
               <li>• Format: JPG, PNG, or WebP</li>
@@ -88,8 +112,10 @@ git switch -c add-my-profile`} />
           </div>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">File Structure</h4>
-            <CodeBlock 
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              File Structure
+            </h4>
+            <CodeBlock
               language="text"
               code={`contributors-gallery/
 ├── public/
@@ -100,40 +126,51 @@ git switch -c add-my-profile`} />
 │           └── your-name.jpg          ← Add your image here
 └── src/
     └── data/
-        └── contributors.ts            ← Add your info here`} 
+        └── contributors.ts            ← Add your info here`}
             />
           </div>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">Adding Your Image</h4>
-            <CodeBlock code={`# Navigate to the images directory
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              Adding Your Image
+            </h4>
+            <CodeBlock
+              code={`# Navigate to the images directory
 cd public/images/contributors
 
 # Copy your image file (use lowercase with hyphens)
 cp ~/path/to/your/image.jpg ./john-doe.jpg
 
 # Verify the file was added
-ls -la`} />
+ls -la`}
+            />
           </div>
         </div>
-      )
+      ),
     },
     {
-      id: 'code-examples',
-      title: 'Updating the Contributors Data',
+      id: "code-examples",
+      title: "Updating the Contributors Data",
       icon: FileImage,
       content: (
         <div className="space-y-6">
           <p className="text-neutral-600 leading-relaxed">
-            Once your image is added, you need to update the contributors data file to include your information.
+            Once your image is added, you need to update the contributors data
+            file to include your information.
           </p>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">Edit contributors.ts</h4>
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              Edit contributors.ts
+            </h4>
             <p className="text-sm text-neutral-600 mb-3">
-              Open <code className="bg-neutral-100 px-2 py-1 rounded">src/data/contributors.ts</code> and add your entry to the array:
+              Open{" "}
+              <code className="bg-neutral-100 px-2 py-1 rounded">
+                src/data/contributors.ts
+              </code>{" "}
+              and add your entry to the array:
             </p>
-            <CodeBlock 
+            <CodeBlock
               language="typescript"
               code={`export const contributors: Contributor[] = [
   // ... existing contributors
@@ -145,7 +182,7 @@ ls -la`} />
     github: 'your-github-username',
     contributions: 1  // Start with 1, we'll update this
   }
-];`} 
+];`}
             />
           </div>
 
@@ -160,8 +197,10 @@ ls -la`} />
           </div>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">Example Entry</h4>
-            <CodeBlock 
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              Example Entry
+            </h4>
+            <CodeBlock
               language="typescript"
               code={`{
   id: 'alexsmith',
@@ -170,25 +209,29 @@ ls -la`} />
   avatar: '/images/contributors/alex-smith.jpg',
   github: 'alexsmith',
   contributions: 1
-}`} 
+}`}
             />
           </div>
         </div>
-      )
+      ),
     },
     {
-      id: 'git-commands',
-      title: 'Submitting Your Contribution',
+      id: "git-commands",
+      title: "Submitting Your Contribution",
       icon: Terminal,
       content: (
         <div className="space-y-6">
           <p className="text-neutral-600 leading-relaxed">
-            After adding your image and updating the data file, it's time to commit your changes and create a pull request.
+            After adding your image and updating the data file, it's time to
+            commit your changes and create a pull request.
           </p>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">1. Stage Your Changes</h4>
-            <CodeBlock code={`# Check what files you've changed
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              1. Stage Your Changes
+            </h4>
+            <CodeBlock
+              code={`# Check what files you've changed
 git status
 
 # Add your new files
@@ -196,37 +239,50 @@ git add public/images/contributors/your-name.jpg
 git add src/data/contributors.ts
 
 # Or add all changes at once
-git add .`} />
+git add .`}
+            />
           </div>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">2. Commit Your Changes</h4>
-            <CodeBlock code={`# Create a meaningful commit message
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              2. Commit Your Changes
+            </h4>
+            <CodeBlock
+              code={`# Create a meaningful commit message
 git commit -m "feat: add [Your Name] to contributors gallery
 
 - Add profile image for [Your Name]
 - Update contributors data with role and GitHub info"
 
 # Or use a simpler version
-git commit -m "Add [Your Name] to contributors"`} />
+git commit -m "Add [Your Name] to contributors"`}
+            />
           </div>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">3. Push to Your Fork</h4>
-            <CodeBlock code={`# Push your branch to your forked repository
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              3. Push to Your Fork
+            </h4>
+            <CodeBlock
+              code={`# Push your branch to your forked repository
 git push origin add-my-profile
 
 # If this is your first push, you might need:
-git push -u origin add-my-profile`} />
+git push -u origin add-my-profile`}
+            />
           </div>
 
           <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">4. Create a Pull Request</h4>
+            <h4 className="font-semibold text-neutral-900 mb-3">
+              4. Create a Pull Request
+            </h4>
             <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-4">
               <ol className="text-sm text-neutral-700 space-y-2">
                 <li>1. Go to your forked repository on GitHub</li>
                 <li>2. Click "Compare & pull request" button</li>
-                <li>3. Add a descriptive title: "Add [Your Name] to contributors"</li>
+                <li>
+                  3. Add a descriptive title: "Add [Your Name] to contributors"
+                </li>
                 <li>4. Describe your changes in the PR description</li>
                 <li>5. Click "Create pull request"</li>
               </ol>
@@ -234,15 +290,18 @@ git push -u origin add-my-profile`} />
           </div>
 
           <div className="bg-purple-50 border border-purple-200 rounded-xl p-4">
-            <h4 className="font-semibold text-purple-900 mb-2">What Happens Next?</h4>
+            <h4 className="font-semibold text-purple-900 mb-2">
+              What Happens Next?
+            </h4>
             <p className="text-purple-800 text-sm">
-              Our maintainers will review your pull request. They might ask for small changes or approve it directly. 
-              Once approved and merged, your profile will appear in the gallery!
+              Our maintainers will review your pull request. They might ask for
+              small changes or approve it directly. Once approved and merged,
+              your profile will appear in the gallery!
             </p>
           </div>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
   return (
@@ -269,7 +328,8 @@ git push -u origin add-my-profile`} />
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-lg text-neutral-600 tracking-tight max-w-2xl mx-auto"
         >
-          A step-by-step guide to adding your profile to our contributors gallery. Perfect for beginners!
+          A step-by-step guide to adding your profile to our contributors
+          gallery. Perfect for beginners!
         </motion.p>
       </div>
 
@@ -285,14 +345,17 @@ git push -u origin add-my-profile`} />
           Table of Contents
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {sections.map((section, index) => (
+          {sections.map((section) => (
             <a
               key={section.id}
               href={`#${section.id}`}
               className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white transition-colors duration-200 group"
             >
               <div className="flex-shrink-0 w-8 h-8 bg-neutral-200 rounded-lg flex items-center justify-center group-hover:bg-neutral-800 transition-colors duration-200">
-                <section.icon size={16} className="text-neutral-600 group-hover:text-white" />
+                <section.icon
+                  size={16}
+                  className="text-neutral-600 group-hover:text-white"
+                />
               </div>
               <span className="text-sm font-medium text-neutral-700 group-hover:text-neutral-900">
                 {section.title}
@@ -321,9 +384,7 @@ git push -u origin add-my-profile`} />
                 {section.title}
               </h2>
             </div>
-            <div className="prose-neutral max-w-none">
-              {section.content}
-            </div>
+            <div className="prose-neutral max-w-none">{section.content}</div>
           </motion.section>
         ))}
       </div>
@@ -335,9 +396,12 @@ git push -u origin add-my-profile`} />
         transition={{ duration: 0.5, delay: 0.8 }}
         className="mt-20 text-center p-8 bg-gradient-to-r from-neutral-50 to-neutral-100 rounded-2xl"
       >
-        <h3 className="text-xl font-semibold text-neutral-900 mb-3">Need Help?</h3>
+        <h3 className="text-xl font-semibold text-neutral-900 mb-3">
+          Need Help?
+        </h3>
         <p className="text-neutral-600 mb-4">
-          If you run into any issues or have questions, don't hesitate to reach out!
+          If you run into any issues or have questions, don't hesitate to reach
+          out!
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm text-neutral-500">
           <span>• Open an issue on GitHub</span>
