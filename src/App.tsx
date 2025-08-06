@@ -4,6 +4,8 @@ import Navigation from './components/Navigation';
 import Gallery from './components/Gallery';
 import Documentation from './components/Documentation';
 
+import logo from './assets/logo.png';
+
 type TabType = 'gallery' | 'documentation';
 
 function App() {
@@ -31,13 +33,8 @@ function App() {
               transition={{ duration: 0.5 }}
               className="flex items-center space-x-3"
             >
-              <div className="w-8 h-8 bg-neutral-900 rounded-lg flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 8C16 10.21 14.21 12 12 12C9.79 12 8 10.21 8 8C8 5.79 9.79 4 12 4C14.21 4 16 5.79 16 8Z" fill="white" />
-                  <path d="M12 14C8.13 14 5 17.13 5 21H19C19 17.13 15.87 14 12 14Z" fill="white" />
-                </svg>
-              </div>
-              <h1 className="text-xl font-bold text-neutral-900">Contributors</h1>
+              <img src={logo} alt="Logo" className="w-14 h-14 rounded-lg" />
+              <h1 className="text-xl font-bold text-neutral-900">AICC Contributors</h1>
             </motion.div>
           </div>
         </div>

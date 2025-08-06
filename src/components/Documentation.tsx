@@ -69,7 +69,7 @@ const Documentation: React.FC = () => {
             <CodeBlock
               code={`# Fork the repository on GitHub, then clone it locally
 git clone https://github.com/Dany1211/Contributors_AICC.git
-cd contributors-gallery`}
+cd Contributors_AICC`}
             />
           </div>
         </div>
