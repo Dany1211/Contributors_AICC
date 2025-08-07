@@ -101,35 +101,20 @@ cd Contributors_AICC`}
               File Structure
             </h4>
             <CodeBlock
-              language="text"
-              code={`contributors-gallery/
-├── public/
-│   └── images/
-│       └── contributors/
-│           ├── sarah-chen.jpg
-│           ├── marcus-johnson.jpg
-│           └── your-name.jpg          ← Add your image here
-└── src/
-    └── data/
-        └── contributors.ts            ← Add your info here`}
-            />
+  language="text"
+  code={`Contributors_AICC/
+├── src/
+│   ├── gallery/
+│   │   ├── sarah-chen.jpg
+│   │   ├── marcus-johnson.jpg
+│   │   └── your-name.jpg          ← Add your image here
+│   └── data/
+│       └── contributors.ts        ← Add your info here`}
+ />
+
           </div>
 
-          <div>
-            <h4 className="font-semibold text-neutral-900 mb-3">
-              Adding Your Image
-            </h4>
-            <CodeBlock
-              code={`# Navigate to the images directory
-cd public/images/contributors
-
-# Copy your image file (use lowercase with hyphens)
-cp ~/path/to/your/image.jpg ./john-doe.jpg
-
-# Verify the file was added
-ls -la`}
-            />
-          </div>
+         
         </div>
       ),
     },
@@ -163,7 +148,7 @@ ls -la`}
     id: 'unique-id-here',
     name: 'Your Full Name',
     role: 'Your Role/Title',
-    avatar: '/images/contributors/your-name.jpg',
+    avatar: {import-name},
     github: 'your-github-username',
     contributions: 1  // Start with 1, we'll update this
   }
@@ -191,7 +176,7 @@ ls -la`}
   id: 'alexsmith',
   name: 'Alex Smith',
   role: 'Frontend Developer',
-  avatar: '/images/contributors/alex-smith.jpg',
+  avatar: alex ,
   github: 'alexsmith',
   contributions: 1
 }`}
@@ -208,7 +193,7 @@ ls -la`}
         <div className="space-y-6">
           <p className="text-neutral-600 leading-relaxed">
             After adding your image and updating the data file, it's time to
-            commit your changes and create a pull request.
+            commit your changes and push them.
           </p>
 
           <div>
@@ -220,7 +205,7 @@ ls -la`}
 git status
 
 # Add your new files
-git add public/images/contributors/your-name.jpg
+git add src/gallery/your-name.jpg
 git add src/data/contributors.ts
 
 # Or add all changes at once
