@@ -41,7 +41,7 @@ const ContributorCard: React.FC<ContributorCardProps> = ({ contributor, index })
         <img
           src={contributor.avatar}
           alt={contributor.name}
-          className="w-32 h-32 rounded-3xl object-cover border-4 border-white shadow-lg mb-4 transition-transform duration-300 group-hover:scale-105"
+          className="w-48 h-48 rounded-3xl object-cover border-4 border-white shadow-lg mb-4 transition-transform duration-300 group-hover:scale-105"
         />
         <h3 className="font-semibold text-neutral-900 tracking-tight text-base text-center mb-1 font-sans">
           {contributor.name}
