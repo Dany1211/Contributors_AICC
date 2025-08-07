@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Award } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { Contributor } from '../data/contributors';
 
 interface ContributorCardProps {
