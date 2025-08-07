@@ -56,7 +56,7 @@ const Gallery: React.FC = () => {
       </div>
 
       {/* Contributors Grid */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {contributors.map((contributor, index) => (
           <ContributorCard
             key={contributor.id}

@@ -13,16 +13,17 @@ const ContributorCard: React.FC<ContributorCardProps> = ({ contributor, index })
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ 
+      transition={{
         duration: 0.4,
         delay: index * 0.1,
         ease: "easeOut"
       }}
-      whileHover={{ 
+      whileHover={{
         y: -4,
-        transition: { duration: 0.2 }
+        scale: 1.03,
+        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)'
       }}
-      className="group relative bg-white rounded-2xl border border-neutral-150 overflow-hidden hover:border-neutral-200 transition-all duration-300"
+      className="group relative bg-gradient-to-br from-white via-neutral-50 to-neutral-200 rounded-3xl border border-neutral-100 shadow-xl overflow-hidden transition-all duration-300 h-full min-h-[280px] flex flex-col items-center justify-center"
     >
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300">
@@ -36,53 +37,28 @@ const ContributorCard: React.FC<ContributorCardProps> = ({ contributor, index })
         </svg>
       </div>
 
-      <div className="relative p-6">
-        <div className="flex items-start space-x-4">
-          <motion.div
-            className="relative flex-shrink-0"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            <img
-              src={contributor.avatar}
-              alt={contributor.name}
-              className="w-16 h-16 rounded-xl object-cover border-2 border-neutral-100 group-hover:border-neutral-200 transition-colors duration-300"
-            />
-            <motion.div
-              className="absolute -bottom-1 -right-1 w-6 h-6 bg-neutral-800 rounded-full flex items-center justify-center"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Award size={12} className="text-white" />
-            </motion.div>
-          </motion.div>
-
-          <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-neutral-900 tracking-tight text-lg">
-              {contributor.name}
-            </h3>
-            <p className="text-neutral-500 text-sm tracking-tight mt-1">
-              {contributor.role}
-            </p>
-            
-            <div className="flex items-center space-x-4 mt-4">
-              <div className="flex items-center space-x-1 text-neutral-600">
-                <Github size={14} />
-                <span className="text-xs font-medium tracking-tight">@{contributor.github}</span>
-              </div>
-              <div className="text-xs text-neutral-400">
-                <span className="font-semibold text-neutral-600">{contributor.contributions}</span> contributions
-              </div>
-            </div>
+      <div className="flex flex-col items-center p-10 w-full">
+        <img
+          src={contributor.avatar}
+          alt={contributor.name}
+          className="w-32 h-32 rounded-3xl object-cover border-4 border-white shadow-lg mb-4 transition-transform duration-300 group-hover:scale-105"
+        />
+        <h3 className="font-semibold text-neutral-900 tracking-tight text-base text-center mb-1 font-sans">
+          {contributor.name}
+        </h3>
+        <div className="flex items-center justify-center space-x-3 mt-3">
+          <div className="flex items-center space-x-1 text-neutral-600">
+            <Github size={16} />
+            <span className="text-xs font-medium tracking-tight">@{contributor.github}</span>
           </div>
         </div>
-
-        {/* Hover effect overlay */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-neutral-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-          initial={false}
-        />
       </div>
+
+      {/* Hover effect overlay */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-neutral-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        initial={false}
+      />
     </motion.div>
   );
 };
