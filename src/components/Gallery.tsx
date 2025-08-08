@@ -78,7 +78,8 @@ const Gallery: React.FC = () => {
         </div>
 
         <p className="mx-auto mb-8 max-w-2xl text-lg tracking-tight text-neutral-600">
-          Meet the talented individuals who make our project possible. Each contributor brings unique skills and perspectives to our community.
+        Students from our club’s Git & GitHub workshop, making their first open source contributions together.
+
         </p>
 
         {/* Stats */}
