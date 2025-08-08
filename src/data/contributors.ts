@@ -1,5 +1,3 @@
-import post from '../gallery/post.png'
-
 export interface Contributor {
   id: string;
   name: string;
@@ -9,21 +7,7 @@ export interface Contributor {
   contributions: number;
 }
 
-export const contributors: Contributor[] = [
-  {
-    id: '1',
-    name: 'Shahrukh Khan',
-    role: 'Baazigar',
-    avatar: 'https://imgs.search.brave.com/SdUK9zJNrcUSdjsp3X_f1dCrsri9nlgW8-TVxfCPbqk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/RDNvdEt5NDZBV2NB/QUFBTS9oYWtsYS1o/YWtsYS1zaGFocnVr/aC5naWY.gif',
-    github: 'Shahrukh2025',
-    contributions: 1 ,
-  },
-  {
-    id: '2',
-    name: 'Clock',
-    role: 'Baazigar',
-    avatar: post ,
-    github: 'Clock2025',
-    contributions: 1 ,
-  },
-];
+// Import the JSON data directly
+import contributorsData from '../../data.json';
+
+export const contributors: Contributor[] = contributorsData as Contributor[];
